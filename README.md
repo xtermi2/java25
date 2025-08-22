@@ -19,10 +19,20 @@
       and cancellation, improving reliability, and enhancing observability.
     - API changes since last preview in JDK 24:
       - StructuredTaskScope is now opened via static factory methods rather than public constructors
-      - 
     - see example `StructuredConcurrency.java`
 - [JEP 506: Scoped Values](https://openjdk.org/jeps/506)
-    - TODO
+    - Enable the sharing of immutable data within and across threads. They are preferred to thread-local variables,
+      especially when using large numbers of virtual threads.
+    - Unlike a thread-local variable, a scoped value is written once and is then immutable, and is available only for a
+      bounded period during execution of the thread.
+    - In effect, a scoped value is an implicit method parameter. It is "as if" every method in a sequence of calls has
+      an additional, invisible, parameter. None of the methods declare this parameter and only the methods that have
+      access to the scoped value object can access its value (the data). Scoped values make it possible to pass data
+      securely from a caller to a faraway callee through a sequence of intermediate methods that do not declare a
+      parameter for the data and have no access to the data.
+    - changes since fourth preview in JDK 24:
+        - The `ScopedValue.orElse` method no longer accepts `null` as its argument.
+    - see example `ScopedValueServer.java`
 - [JEP 507: Primitive Types in Patterns, instanceof, and switch (Third Preview)](https://openjdk.org/jeps/507)
     - TODO
 - [JEP 508: Vector API (Tenth Incubator)](https://openjdk.org/jeps/508)
