@@ -8,7 +8,9 @@
 # JDK 25 Features
 
 - [JEP 470: PEM Encodings of Cryptographic Objects (Preview)](https://openjdk.org/jeps/470)
-    - TODO
+    - Introduce an API for encoding objects that represent cryptographic keys, certificates, and certificate revocation lists into the widely-used Privacy-Enhanced Mail (PEM) transport format, and for decoding from that format back into objects.
+    - Support standards — Support conversions between PEM text and cryptographic objects that have standard representations in the binary formats PKCS#8 (for private keys), X.509 (public keys, certificates, and certificate revocation lists), and PKCS#8 v2.0 (encrypted private keys and asymmetric keys).
+    - see example `PEMTest.java`
 - [JEP 502: Stable Values (Preview)](https://openjdk.org/jeps/502)
     - TODO
 - [JEP 503: Remove the 32-bit x86 Port](https://openjdk.org/jeps/503)
