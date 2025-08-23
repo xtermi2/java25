@@ -37,7 +37,10 @@
         - The `ScopedValue.orElse` method no longer accepts `null` as its argument.
     - see example `ScopedValueServer.java`
 - [JEP 507: Primitive Types in Patterns, instanceof, and switch (Third Preview)](https://openjdk.org/jeps/507)
-    - TODO
+    - Enhance pattern matching by allowing primitive type patterns in all pattern contexts, and extend instanceof and
+      switch to work with all primitive types.
+    - No changes since second preview in JDK 24.
+    - see example `PrimitiveTypesInPatterns.java`
 - [JEP 508: Vector API (Tenth Incubator)](https://openjdk.org/jeps/508)
     - Introduce an API to express vector computations that reliably compile at runtime to optimal vector instructions on supported CPUs, thus achieving performance superior to equivalent scalar computations.
     - The Vector API will incubate until necessary features
