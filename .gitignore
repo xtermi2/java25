@@ -56,3 +56,4 @@ buildNumber.properties
 
 
 setJDK*.sh
+/profile.jfr

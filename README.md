@@ -49,7 +49,11 @@
       that time, the Vector API will be adapted and its implementation to use them, and will be promoted from incubation
       to preview.
 - [JEP 509: JFR CPU-Time Profiling (Experimental)](https://openjdk.org/jeps/509)
-    - TODO
+    - Enhance the [JDK Flight Recorder (JFR)](https://dev.java/learn/jvm/jfr/) to capture more accurate CPU-time profiling information on Linux.
+      - JDK Flight Recorder (JFR) is an observability and monitoring framework built into the HotSpot JVM. JFR has low overhead, an extensive API, and a large toolset that can provide deep insight into your applications and assist in development.
+    - To enable JFR on startup with this feature enabled, include the VM argument `-XX:StartFlightRecording=jdk.CPUTimeSample#enabled=true,filename=profile.jfr` to your java command.
+      - open the `profile.jfr` file in a Java profiler such as [Java Mission Control (JMC)](https://www.oracle.com/java/technologies/javase/products-jmc8-downloads.html) or IntelliJ IDEA to analyze the recording.
+      - Or simply use `jfr view cpu-time-hot-methods profile.jfr` for a quick look at the hottest methods in the recording.
 - [JEP 510: Key Derivation Function API](https://openjdk.org/jeps/510)
     - TODO
 - [JEP 511: Module Import Declarations](https://openjdk.org/jeps/511)
