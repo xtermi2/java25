@@ -60,7 +60,11 @@
     - no changes since preview in JDK 24.
     - see `KeyDerivationFunctionAPI.java`
 - [JEP 511: Module Import Declarations](https://openjdk.org/jeps/511)
-    - TODO
+    - Enhance the Java programming language with the ability to succinctly import all of the packages exported by a
+      module. This simplifies the reuse of modular libraries, but does not require the importing code to be in a module
+      itself.
+    - No changes since second preview in JDK 24.
+    - See example `ModuleImportDeclaration.java`
 - [JEP 512: Compact Source Files and Instance Main Methods](https://openjdk.org/jeps/512)
     - TODO
 - [JEP 513: Flexible Constructor Bodies](https://openjdk.org/jeps/513)
