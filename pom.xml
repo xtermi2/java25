@@ -59,7 +59,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <argLine>--enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit --add-modules jdk.incubator.vector</argLine>
+                    <argLine>-XX:+UseCompactObjectHeaders --enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit --add-modules jdk.incubator.vector</argLine>
                 </configuration>
             </plugin>
             <plugin>

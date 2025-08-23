@@ -54,7 +54,15 @@
 - [JEP 518: JFR Cooperative Sampling](https://openjdk.org/jeps/518)
     - TODO
 - [JEP 519: Compact Object Headers](https://openjdk.org/jeps/519)
-    - TODO
+    - Reduce the size of object headers in the HotSpot JVM from between 96 and 128 bits down to 64 bits on 64-bit architectures. This will reduce heap size, improve deployment density, and increase data locality.
+    - Part of [project Lilliput](https://openjdk.org/projects/lilliput/)
+    - They have been tested at Oracle by running the full JDK test suite. They have also been tested at Amazon by hundreds of services in production, most of them using backports of the feature to JDK 21 and JDK 17.
+    - Various experiments demonstrate that enabling compact object headers improves performance:
+      - In one setting, the SPECjbb2015 benchmark uses 22% less heap space and 8% less CPU time.
+      - In another setting, the number of garbage collections done by SPECjbb2015 is reduced by 15%, with both the G1 and Parallel collectors.
+      - A highly parallel JSON parser benchmark runs in 10% less time.
+    - It is not a goal to make compact object headers be the default object-header layout.
+    - activate via `-XX:+UseCompactObjectHeaders`
 - [JEP 520: JFR Method Timing & Tracing](https://openjdk.org/jeps/520)
     - TODO
 - [JEP 521: Generational Shenandoah](https://openjdk.org/jeps/521)
