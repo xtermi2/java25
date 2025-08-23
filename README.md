@@ -12,7 +12,8 @@
     - Support standards — Support conversions between PEM text and cryptographic objects that have standard representations in the binary formats PKCS#8 (for private keys), X.509 (public keys, certificates, and certificate revocation lists), and PKCS#8 v2.0 (encrypted private keys and asymmetric keys).
     - see example `PEMTest.java`
 - [JEP 502: Stable Values (Preview)](https://openjdk.org/jeps/502)
-    - TODO
+    - Introduce an API for stable values, which are objects that hold immutable data. Stable values are treated as constants by the JVM, enabling the same performance optimizations that are enabled by declaring a field final. Compared to final fields, however, stable values offer greater flexibility as to the timing of their initialization.
+    - see example `StableValues.java`
 - [JEP 503: Remove the 32-bit x86 Port](https://openjdk.org/jeps/503)
     - TODO
 - [JEP 505: Structured Concurrency (Fifth Preview)](https://openjdk.org/jeps/505)
