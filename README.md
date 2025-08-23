@@ -15,7 +15,8 @@
     - Introduce an API for stable values, which are objects that hold immutable data. Stable values are treated as constants by the JVM, enabling the same performance optimizations that are enabled by declaring a field final. Compared to final fields, however, stable values offer greater flexibility as to the timing of their initialization.
     - see example `StableValues.java`
 - [JEP 503: Remove the 32-bit x86 Port](https://openjdk.org/jeps/503)
-    - TODO
+    - Remove the source code and build support for the 32-bit x86 port. This port was deprecated for removal in JDK 24 (JEP 501) with the express intent to remove it in a future release.
+    - No other 32-bit port for any other architecture is affected.
 - [JEP 505: Structured Concurrency (Fifth Preview)](https://openjdk.org/jeps/505)
     - Simplify concurrent programming by introducing an API for structured concurrency. Structured concurrency treats
       groups of related tasks running in different threads as a single unit of work, thereby streamlining error handling
