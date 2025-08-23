@@ -55,7 +55,10 @@
       - open the `profile.jfr` file in a Java profiler such as [Java Mission Control (JMC)](https://www.oracle.com/java/technologies/javase/products-jmc8-downloads.html) or IntelliJ IDEA to analyze the recording.
       - Or simply use `jfr view cpu-time-hot-methods profile.jfr` for a quick look at the hottest methods in the recording.
 - [JEP 510: Key Derivation Function API](https://openjdk.org/jeps/510)
-    - TODO
+    - Introduce an API for Key Derivation Functions (KDFs), which are cryptographic algorithms for deriving additional keys from a secret key and other data.
+    - KDF is a building block of Hybrid Public Key Encryption (HPKE) which enables the smooth transition to quantum-safe encryption algorithms.
+    - no changes since preview in JDK 24.
+    - see `KeyDerivationFunctionAPI.java`
 - [JEP 511: Module Import Declarations](https://openjdk.org/jeps/511)
     - TODO
 - [JEP 512: Compact Source Files and Instance Main Methods](https://openjdk.org/jeps/512)
