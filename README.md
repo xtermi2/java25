@@ -39,7 +39,11 @@
 - [JEP 507: Primitive Types in Patterns, instanceof, and switch (Third Preview)](https://openjdk.org/jeps/507)
     - TODO
 - [JEP 508: Vector API (Tenth Incubator)](https://openjdk.org/jeps/508)
-    - TODO
+    - Introduce an API to express vector computations that reliably compile at runtime to optimal vector instructions on supported CPUs, thus achieving performance superior to equivalent scalar computations.
+    - The Vector API will incubate until necessary features
+      of [Project Valhalla](https://openjdk.org/projects/valhalla/) become available as preview features. At
+      that time, the Vector API will be adapted and its implementation to use them, and will be promoted from incubation
+      to preview.
 - [JEP 509: JFR CPU-Time Profiling (Experimental)](https://openjdk.org/jeps/509)
     - TODO
 - [JEP 510: Key Derivation Function API](https://openjdk.org/jeps/510)
