@@ -81,9 +81,23 @@
     - No changes since 3rd preview in JDK 24.
     - see example `FlexibleConstructorBodies.java`
 - [JEP 514: Ahead-of-Time Command-Line Ergonomics](https://openjdk.org/jeps/514)
-    - TODO
+    - Make it easier to create [ahead-of-time caches (JEP 483)](https://openjdk.org/jeps/483), which accelerate the startup of Java applications, by simplifying the commands required for common use cases.
+    - In JEP 483 you have to run java twice in order to create an AOT cache (see example in https://github.com/xtermi2/java24), this can now be done in one command for common use-cases:
+    - 1st recording run to create the cache `java -XX:AOTCacheOutput=app.aot -cp app.jar com.example.App`
+    - 2nd run the application with the cache `java -XX:AOTCache=app.aot -cp app.jar com.example.App`
+  ```bash
+  ./mvnw clean package
+  
+  java -XX:AOTCacheOutput=target/app.aot --enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit -cp target/java25-1.0-SNAPSHOT.jar
+  
+  time java -XX:AOTCache=target/app.aot --enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit -cp target/java25-1.0-SNAPSHOT.jar com.github.xtermi2.java25.jep511moduleimport.ModuleImportDeclaration
+  
+  time java --enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit -cp target/java25-1.0-SNAPSHOT.jar com.github.xtermi2.java25.jep511moduleimport.ModuleImportDeclaration
+  ```
 - [JEP 515: Ahead-of-Time Method Profiling](https://openjdk.org/jeps/515)
-    - TODO
+    - Improve warmup time by making method-execution profiles from a previous run of an application instantly available, when the HotSpot Java Virtual Machine starts. This will enable the JIT compiler to generate native code immediately upon application startup, rather than having to wait for profiles to be collected.
+    - Uses the existing AOT workflow from JEP 515 and 483
+    - see example of JEP 514 above.
 - [JEP 518: JFR Cooperative Sampling](https://openjdk.org/jeps/518)
     - TODO
 - [JEP 519: Compact Object Headers](https://openjdk.org/jeps/519)
