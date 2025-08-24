@@ -99,7 +99,7 @@
     - Uses the existing AOT workflow from JEP 515 and 483
     - see example of JEP 514 above.
 - [JEP 518: JFR Cooperative Sampling](https://openjdk.org/jeps/518)
-    - TODO
+    - Improve the stability of the JDK Flight Recorder (JFR) when it asynchronously samples Java thread stacks. Achieve this by walking call stacks only at safepoints, while minimizing safepoint bias.
 - [JEP 519: Compact Object Headers](https://openjdk.org/jeps/519)
     - Reduce the size of object headers in the HotSpot JVM from between 96 and 128 bits down to 64 bits on 64-bit architectures. This will reduce heap size, improve deployment density, and increase data locality.
     - Part of [project Lilliput](https://openjdk.org/projects/lilliput/)
