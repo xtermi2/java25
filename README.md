@@ -76,7 +76,10 @@
         - The implementation of the IO class is now based upon System.out and System.in rather than the java.io.Console class.
     - see example `UnnamedClasses.java`
 - [JEP 513: Flexible Constructor Bodies](https://openjdk.org/jeps/513)
-    - TODO
+    - In constructors in the Java programming language, allow statements that do not reference the instance being
+      created to appear before an explicit constructor invocation.
+    - No changes since 3rd preview in JDK 24.
+    - see example `FlexibleConstructorBodies.java`
 - [JEP 514: Ahead-of-Time Command-Line Ergonomics](https://openjdk.org/jeps/514)
     - TODO
 - [JEP 515: Ahead-of-Time Method Profiling](https://openjdk.org/jeps/515)
