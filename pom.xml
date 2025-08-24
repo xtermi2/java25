@@ -59,7 +59,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <argLine>-XX:StartFlightRecording=jdk.CPUTimeSample#enabled=true,filename=profile.jfr -XX:+UseCompactObjectHeaders --enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit --add-modules jdk.incubator.vector</argLine>
+                    <argLine>-XX:StartFlightRecording=jdk.CPUTimeSample#enabled=true,filename=profile.jfr,jdk.MethodTrace#filter=java.util.HashMap::resize -XX:+UseCompactObjectHeaders --enable-preview --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit --add-modules jdk.incubator.vector</argLine>
                 </configuration>
             </plugin>
             <plugin>

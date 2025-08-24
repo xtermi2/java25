@@ -111,9 +111,17 @@
     - It is not a goal to make compact object headers be the default object-header layout.
     - activate via `-XX:+UseCompactObjectHeaders`
 - [JEP 520: JFR Method Timing & Tracing](https://openjdk.org/jeps/520)
-    - TODO
+    - Extend the JDK Flight Recorder (JFR) with facilities for method timing and tracing via bytecode instrumentation.
+    - Introduce two new JFR events, jdk.MethodTiming and jdk.MethodTrace. They both accept a filter to select the methods to time and trace.
+    - For example, to see what triggers the resize of a HashMap, you can configure the MethodTrace event's filter when making a recording and then use the `jfr` tool to display the recorded event:
+      - `java -XX:StartFlightRecording:jdk.MethodTrace#filter=java.util.HashMap::resize,filename=profile.jfr ...`
+      - ```bash
+        jfr print --events jdk.MethodTrace --stack-depth 20 profile.jfr
+        ```
 - [JEP 521: Generational Shenandoah](https://openjdk.org/jeps/521)
-    - TODO
+    - Change the generational mode of the Shenandoah garbage collector from an experimental feature to a product feature.
+    - Since experimental status in JDK 24 there have been implemented many stability and performance improvements.
+    - activate via `-XX:+UseShenandoahGC -XX:ShenandoahGCMode=generational`
 
 ----------------------
 
