@@ -66,7 +66,15 @@
     - No changes since second preview in JDK 24.
     - See example `ModuleImportDeclaration.java`
 - [JEP 512: Compact Source Files and Instance Main Methods](https://openjdk.org/jeps/512)
-    - TODO
+    - Evolve the Java language so that beginners can write their first programs without needing to understand language
+      features designed for large programs. Far from using a separate dialect of Java, beginners can write streamlined
+      declarations for single-class programs and then seamlessly expand their programs to use more advanced features as
+      their skills grow.
+    - changes since 4rd preview in JDK 24:
+        - The new IO class for basic console I/O is now in the java.lang package rather than the java.io package.
+        - The static methods of the IO class are no longer implicitly imported into compact source files. Thus invocations of these methods must name the class, e.g., IO.println("Hello, world!"), unless the methods are explicitly imported.
+        - The implementation of the IO class is now based upon System.out and System.in rather than the java.io.Console class.
+    - see example `UnnamedClasses.java`
 - [JEP 513: Flexible Constructor Bodies](https://openjdk.org/jeps/513)
     - TODO
 - [JEP 514: Ahead-of-Time Command-Line Ergonomics](https://openjdk.org/jeps/514)
